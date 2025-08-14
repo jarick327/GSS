@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Show Studios Insights Report</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #007bff, #00bfff);
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(to bottom, #007bff, #00bfff);
+        }
+        .logo {
+            max-width: 100%;
+            height: auto;
+            max-height: 150px;
+            background: url('https://www.gameshowstudio.com/logo.png') no-repeat center; /* Replace with actual logo URL or path */
+            background-size: contain;
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: #ffd700;
+            text-align: center;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
+        }
+        .subheader {
+            text-align: center;
+            font-size: 1.2em;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #ffffff;
+            font-size: 1.8em;
+            border-bottom: 2px solid #ffd700;
+            margin-bottom: 10px;
+        }
+        h3 {
+            color: #ffd700;
+            font-size: 1.4em;
+        }
+        .section {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 900px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ffd700;
+            text-align: left;
+        }
+        th {
+            background: #007bff;
+            color: #ffffff;
+        }
+        .chart-container {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        canvas {
+            max-width: 100%;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        .emoji {
+            font-size: 1.5em;
+            margin-right: 5px;
+        }
+        .quote {
+            font-style: italic;
+            color: #333333; /* Darker text for better contrast */
+            margin: 10px 0;
+            background-color: #f8f9fa; /* Very light gray for better readability */
+            padding: 10px;
+            border-left: 4px solid #ffd700; /* Gold border */
+            font-size: 1.1em;
+            display: block;
+            border-radius: 5px;
+        }
+        .recommendation {
+            border-left: 4px solid #ffd700;
+            padding-left: 10px;
+            margin: 10px 0;
+        }
+        .tab-container {
+            margin: 20px 0;
+        }
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        .tab-button {
+            background: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .tab-button.active {
+            background: #ffd700;
+            color: #000000;
+        }
+        .tab-button:hover {
+            background: #00bfff;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .highlight {
+            background-color: #ffd700;
+            color: #000000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #e0e0e0;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; }
+            .section { padding: 15px; }
+            .tab-button { padding: 8px 15px; font-size: 0.9em; }
+            .logo { max-height: 100px; }
+        }
+        /* Accessibility Enhancements */
+        [aria-hidden="true"] { display: none; }
+        canvas:focus { outline: 2px solid #ffd700; }
+        .tab-button:focus { outline: 2px solid #ffd700; }
+        .logo { outline: none; } /* Prevent outline on logo for accessibility */
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo" role="img" alt="Game Show Studios Logo"></div>
+        <h1>Hit the Buzzer on These Insights!</h1>
+        <p class="subheader">June August 2025 Game Show Studios Survey</p>
+    </div>
+
+    <div class="section">
+        <h2>Executive Summary</h2>
+        <p>Game Show Studios in Sacramento and San Diego lit up from June to August 2025 with 200 survey responses, scoring an NPS of 69. Guests loved the fun, high-energy atmosphere, charismatic hosts, and the perfect vibe for team building and birthdays, with 80% saying it was even more fun than escape rooms. Key opportunities emerged around session length, tech reliability, game design tweaks, perceived value, and rare fairness concerns. Top fixes: longer sessions, smoother tech, refined games, and fairness safeguards.</p>
+    </div>
+
+    <div class="section">
+        <h2>NPS Breakdown: Spin the Wheel of Scores!</h2>
+        <p>Net Promoter Score (NPS = % Promoters [9-10] - % Detractors [0-6]) measures guest loyalty:</p>
+        <table>
+            <tr>
+                <th>Metric</th>
+                <th>Total</th>
+                <th>Sacramento</th>
+                <th>San Diego</th>
+            </tr>
+            <tr><td>Responses</td><td>200</td><td>38</td><td>162</td></tr>
+            <tr><td>NPS</td><td>69</td><td>89</td><td>64</td></tr>
+            <tr><td>% Promoters (9-10)</td><td>78%</td><td>95%</td><td>74%</td></tr>
+            <tr><td>% Passives (7-8)</td><td>13%</td><td>1%</td><td>16%</td></tr>
+            <tr><td>% Detractors (0-6)</td><td>9%</td><td>4%</td><td>10%</td></tr>
+        </table>
+        <div class="chart-container">
+            <canvas id="npsChart" aria-label="Bar chart showing NPS scores: Total 69, Sacramento 89, San Diego 64"></canvas>
+        </div>
+        <p><strong>Trend Insight:</strong> I’m excited to see our NPS climb from 69 in March to 77 in August! San Diego hit a summer dip to 62 in July, though. Let’s chalk that up to heat and tech glitches.</p>
+        <div class="chart-container">
+            <canvas id="npsTrendChart" aria-label="Line chart showing NPS trend from March (69) to August (77)"></canvas>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Site Comparison: Spotlight Matchup</h2>
+        <ul>
+            <li><span class="emoji">🌟</span> <strong>Sacramento</strong>: NPS 89. Consistently great feedback surrounding seamless operations and host love for Andreas and Karina came through strongly. I’m proud of this crew!</li>
+            <li><span class="emoji">🎭</span> <strong>San Diego</strong>: NPS 64 took a hit from heat and tech woes, but with AC fixed, San Diego's NPS jumps to 71. Way to go, team!</li>
+            <li><strong>Key Gap:</strong> An 18-point NPS difference exists, with Sacramento leading, though San Diego is catching up with fixes.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Top Strengths: Survey Showdown Stars</h2>
+        <p>I'm pumped to highlight these ‘mention’ wins. Here's where guests think we’re excelling:</p>
+        <ol>
+            <li><span class="emoji">🔥</span> <strong>Host Performance</strong> (50 mentions): Common praises for Andreas (funny, smooth), Juno (fantastic, engaging), Hailey (awesome for groups), Kali (explanatory, light-hearted), Faith (hilarious) and others like Anya/Shea (welcoming, showman-like). <span class="quote">"The host was fantastic!"</span></li>
+            <li><span class="emoji">👯‍♂️🏆</span> <strong>Fun and Unique Experience</strong> (~90 mentions): Described as “unique,” “interactive,” and “a blast,” ideal for families, friends, and teams. Games like Family Feud and Wheel of Fortune were highlights. <span class="quote">"It felt like I was on a game show like on tv!! Loved it."</span></li>
+            <li><span class="emoji">🎯🎬</span> <strong>Atmosphere and Production</strong> (~30 mentions): Lighting, decor, and buzzers created a TV-worthy experience. <span class="quote">"We loved the atmosphere of the game show! Lighting was nice large screens and even the podiums and the buzzers were nice."</span></li>
+            <li><span class="emoji">🌟</span> <strong>Unique Edge</strong>: 80% say we're better than most entertainment options.</li>
+        </ol>
+        <p>These strengths position Game Show Studios as a leader in interactive entertainment.</p>
+    </div>
+
+    <div class="section">
+        <h2>Audience Feedback: Qualitative Insights</h2>
+        <ol>
+            <li><span class="emoji">⏰</span> <strong>Duration and Pace</strong> (45% say too short, ~45 mentions): The 1-hour session felt “too short” or “rushed,” especially for larger groups. 90-minute options desired. <span class="quote">"I wish it was longer than an hour. It felt like as soon as we started having the most fun, it was over."</span></li>
+            <li><span class="emoji">🎲</span> <strong>Game Tweaks</strong> (~38 mentions): The Over Under game was disliked for random items, duels were seen as unfair or unclear, buzzers felt underutilized, and multiple suggestions of adding more game variety like Trivia. <span class="quote">"Over Under - it was ridiculous items to price."</span></li>
+            <li><span class="emoji">⚙️</span> <strong>Technical Issues</strong> (~15 mentions): AC, Sound system problems, game crashes, and scoring confusion impacted professionalism. <span class="quote">"The sound system was horrible couldn’t hear well the sound was muffled."</span></li>
+            <li><span class="emoji">💰</span> <strong>Value and Price</strong> (~10 mentions): Some felt the cost was high for the duration, particularly for private parties. <span class="quote">"Pricing. We all felt it was way too expensive for just 1h of game."</span></li>
+        </ol>
+        <p>Other suggestions included: Chairs for players and or spectators who can’t stand for long periods of time, adding laugh tracks, videos to take home, and selling drinks/snacks.</p>
+        <p>These insights highlight areas for improvement to enhance future guest satisfaction.</p>
+    </div>
+
+    <div class="section">
+        <h2>Multi-Choice Insights: Rapid-Fire Data</h2>
+        <p>Explore guest feedback through these interactive tabs:</p>
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-button active" onclick="showTab('improveGame')" aria-label="Show Which game could use some improvement chart">Game Improvement</button>
+                <button class="tab-button" onclick="showTab('value')" aria-label="Show How would you rate the value of the Game Show Experience for the price chart">Value Rating</button>
+                <button class="tab-button" onclick="showTab('compare')" aria-label="Show How does the Game Show Experience compare to other fun stuff you’ve tried chart">Compare to Others</button>
+                <button class="tab-button" onclick="showTab('event')" aria-label="Show What kind of event do you think this is perfect for chart">Event Fit</button>
+                <button class="tab-button" onclick="showTab('favoriteGame')" aria-label="Show Which of the three games did you enjoy the most chart">Favorite Game</button>
+                <button class="tab-button" onclick="showTab('length')" aria-label="Show Did the length of the Game Show Experience feel appropriate chart">Length</button>
+            </div>
+            <div id="improveGame" class="tab-content active">
+                <h3>Which game could use some improvement? (Total 62)</h3>
+                <div class="chart-container">
+                    <canvas id="improveGameChart" aria-label="Bar chart of games needing improvement: None - they were all great 45%, Over and Under 31%, Wheel of Wonder 16%, Survey Showdown 8%"></canvas>
+                </div>
+            </div>
+            <div id="value" class="tab-content" aria-hidden="true">
+                <h3>How would you rate the value of the Game Show Experience for the price? (Total 137)</h3>
+                <div class="chart-container">
+                    <canvas id="valueChart" aria-label="Bar chart of value perception: Totally worth it 29%, Good 32%, Fine 20%, Bit Pricey 14%, Overpriced 5%"></canvas>
+                </div>
+            </div>
+            <div id="compare" class="tab-content" aria-hidden="true">
+                <h3>How does the Game Show Experience compare to other fun stuff you’ve tried (escape rooms, mini golf, axe throwing, etc.)? (Total 77)</h3>
+                <div class="chart-container">
+                    <canvas id="compareChart" aria-label="Bar chart comparing to other activities: Way more fun 58%, A bit better 22%, About the same 10%, A little less exciting 5%, Prefer escapes 3%, Not my thing 1%"></canvas>
+                </div>
+            </div>
+            <div id="event" class="tab-content" aria-hidden="true">
+                <h3>What kind of event do you think this is perfect for? (Pick all that apply!) (Total 157)</h3>
+                <div class="chart-container">
+                    <canvas id="eventChart" aria-label="Bar chart of event suitability: Work team 36%, Celebrations 35%, Family 25%, Date night 3%"></canvas>
+                </div>
+            </div>
+            <div id="favoriteGame" class="tab-content" aria-hidden="true">
+                <h3>Which of the three games did you enjoy the most? (Total 63)</h3>
+                <div class="chart-container">
+                    <canvas id="favoriteGameChart" aria-label="Pie chart of favorite games: Survey Showdown (Family Feud-style) 54%, I liked them all equally 21%, Wheel of Wonder (Spin + Solve style) 19%, None stood out 5%, Over and Under (Price is Right + Plinko) 2%"></canvas>
+                </div>
+            </div>
+            <div id="length" class="tab-content" aria-hidden="true">
+                <h3>Did the length of the Game Show Experience feel appropriate? (Total 53)</h3>
+                <div class="chart-container">
+                    <canvas id="lengthChart" aria-label="Pie chart of session length perception: Just right 55%, Too short - I wanted more time! 45%"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>DOGI Recommendations</h2>
+        <p>Based on data analysis, the following recommendations are proposed to drive growth and improve the guest experience. Let's aim for NPS 80+ with these game-changers:</p>
+        <div class="recommendation">
+            <p><strong>Extend GSS Duration</strong>
+                <ul>
+                    <li><strong>Rationale:</strong> The most frequent complaint is the 1-hour session feeling “too short.” Longer sessions could improve value perception.</li>
+                    <li><strong>Action:</strong> Offer 90-minute upgrade options, especially for larger groups or private parties, to allow more gameplay and engagement.</li>
+                </ul>
+            </p>
+        </div>
+        <div class="recommendation">
+            <p><strong>Refine Game Design</strong>
+                <ul>
+                    <li><strong>Rationale:</strong> Over Under and duels received criticism for being unengaging or unfair. Adding variety (e.g., trivia) could boost appeal.</li>
+                    <li><strong>Action:</strong> Revamp or remove Over Under, ensure fair and inclusive duels, add trivia rounds, increase buzzer use, and allow game choice flexibility.</li>
+                </ul>
+            </p>
+        </div>
+        <div class="recommendation">
+            <p><strong>Address Technical Issues</strong>
+                <ul>
+                    <li><strong>Rationale:</strong> Technical problems (sound, crashes, scoring) were noted in ~15 responses, particularly in San Diego, impacting professionalism.</li>
+                    <li><strong>Action:</strong> Invest in reliable audio/video systems, add mics to podiums, and ensure pre-session checks to prevent disruptions.</li>
+                </ul>
+            </p>
+        </div>
+        <div class="recommendation">
+            <p><strong>Enhance Perceived Value</strong>
+                <ul>
+                    <li><strong>Rationale:</strong> Price concerns (~15 mentions) suggest the cost feels high for the duration or experience. Added features could justify pricing.</li>
+                    <li><strong>Action:</strong> Offer take-home prizes, optional video recordings, or drink bundles. Test off-peak discounts to reduce 19% "pricey" perception.</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <footer>
+    </footer>
+
+    <script>
+        // Tab functionality (moved outside DOMContentLoaded to be globally accessible)
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+                tab.setAttribute('aria-hidden', 'true');
+            });
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById(tabId).setAttribute('aria-hidden', 'false');
+            document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+
+        // Ensure DOM is fully loaded before running Chart.js
+        document.addEventListener('DOMContentLoaded', function () {
+            // Chart.js configuration
+            const chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { backgroundColor: '#007bff', titleColor: '#ffffff', bodyColor: '#ffffff' }
+                },
+                scales: {
+                    x: { ticks: { autoSkip: false, maxRotation: 0, minRotation: 0, color: '#000000' } }, // No rotation for cleaner labels
+                    y: { beginAtZero: true, max: 100, ticks: { callback: value => value + '%', color: '#000000' } }
+                }
+            };
+
+            const lineChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { backgroundColor: '#007bff', titleColor: '#ffffff', bodyColor: '#ffffff' }
+                },
+                scales: {
+                    x: { ticks: { color: '#000000' } },
+                    y: { beginAtZero: false, max: 100, ticks: { color: '#000000' } }
+                }
+            };
+
+            const pieOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right', labels: { color: '#000000', font: { size: 12 } } },
+                    tooltip: { backgroundColor: '#007bff', titleColor: '#ffffff', bodyColor: '#ffffff' }
+                }
+            };
+
+            // NPS Chart
+            new Chart(document.getElementById('npsChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Total', 'Sacramento', 'San Diego'],
+                    datasets: [{
+                        label: 'NPS',
+                        data: [69, 89, 64],
+                        backgroundColor: ['#007bff', '#ffd700', '#00bfff'],
+                        borderColor: '#ffffff',
+                        borderWidth: 1
+                    }]
+                },
+                options: chartOptions
+            });
+
+            // NPS Trend Chart
+            new Chart(document.getElementById('npsTrendChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+                    datasets: [{
+                        label: 'NPS Trend',
+                        data: [69, 73, 72, 68, 71, 77],
+                        borderColor: '#ffd700',
+                        backgroundColor: 'rgba(255, 215, 0, 0.2)',
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: lineChartOptions
+            });
+
+            // Strengths Chart - Removed as per previous request
+            // No chart instantiation here
+
+            // Improvements Chart - Removed as per request
+            // No chart instantiation here
+
+            // Multi-Choice Charts
+            new Chart(document.getElementById('enjoyChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Hype Vibes', 'Crew Play', 'Host Energy', 'Games', 'Set'],
+                    datasets: [{ data: [24, 24, 21, 18, 13], backgroundColor: '#007bff' }]
+                },
+                options: chartOptions
+            });
+
+            new Chart(document.getElementById('compareChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Way More Fun', 'Bit Better', 'Same', 'Less Exciting', 'Prefer Escapes', 'Not My Thing'],
+                    datasets: [{ data: [58, 22, 10, 5, 3, 1], backgroundColor: '#007bff' }]
+                },
+                options: chartOptions
+            });
+
+            new Chart(document.getElementById('eventChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Work team', 'Celebrations', 'Family', 'Date night'],
+                    datasets: [{ data: [36, 35, 25, 3], backgroundColor: '#007bff' }]
+                },
+                options: chartOptions
+            });
+
+            new Chart(document.getElementById('valueChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Totally worth it', 'Good', 'Fine', 'Bit Pricey', 'Overpriced'],
+                    datasets: [{ data: [29, 32, 20, 14, 5], backgroundColor: '#007bff' }]
+                },
+                options: chartOptions
+            });
+
+            new Chart(document.getElementById('favoriteGameChart'), {
+                type: 'pie',
+                data: {
+                    labels: ['Survey Showdown (Family Feud-style)', 'I liked them all equally', 'Wheel of Wonder (Spin + Solve style)', 'None stood out', 'Over and Under (Price is Right + Plinko)'],
+                    datasets: [{
+                        data: [34, 13, 12, 3, 1],
+                        backgroundColor: ['#007bff', '#00bfff', '#ffd700', '#ff4500', '#4682b4']
+                    }]
+                },
+                options: pieOptions
+            });
+
+            new Chart(document.getElementById('improveGameChart'), {
+                type: 'pie',
+                data: {
+                    labels: ['None - they were all great', 'Over and Under', 'Wheel of Wonder', 'Survey Showdown'],
+                    datasets: [{
+                        data: [28, 19, 10, 5],
+                        backgroundColor: ['#007bff', '#00bfff', '#ffd700', '#ff4500']
+                    }]
+                },
+                options: pieOptions
+            });
+
+            new Chart(document.getElementById('lengthChart'), {
+                type: 'pie',
+                data: {
+                    labels: ['Just right', 'Too short - I wanted more time!'],
+                    datasets: [{
+                        data: [29, 24],
+                        backgroundColor: ['#007bff', '#ffd700']
+                    }]
+                },
+                options: pieOptions
+            });
+        });
+    </script>
+</body>
+</html>
